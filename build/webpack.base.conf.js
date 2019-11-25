@@ -22,6 +22,7 @@ var plugins = [];
 // 读取src/page下的所有页
 const pages = fs.readdirSync(resolve('src/page'));
 pages.forEach((page) => {
+  // 方法返回一个stat数组对象
   var stat = fs.lstatSync(`src/page/${page}`);
   if (stat.isDirectory()) {
     entries[page] = `./src/page/${page}/entry.js`;
